@@ -1,0 +1,16 @@
+{
+    "name": "bmilesp/saas-overrides",
+    "description": "Overrides for Saas Projects - to be used in conjunction with CakePHPPostINstall package",
+    "authors": [
+        {
+            "name": "bmilesp",
+            "email": "bmilesp@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "type": "cakephp-plugin",
+    "require": {
+        "bmilesp/cakephp-post-install": "dev-master",
+        "composer/installers": "~1.0"
+    }
+}
