@@ -10,7 +10,6 @@
     "minimum-stability": "dev",
     "type": "cakephp-plugin",
     "require": {
-        "bmilesp/cakephp-post-install": "dev-master",
         "composer/installers": "~1.0"
     }
 }
