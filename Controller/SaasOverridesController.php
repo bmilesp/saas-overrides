@@ -24,7 +24,7 @@ App::uses('Controller', 'Controller');
 class SaasOverridesController extends Controller {
 
 	public $layout = 'BootstrapExtend.default';
-
+ 
 	public $helpers = array(
 		'Form' => array('className' => 'BootstrapExtend.BootstrapExtForm'),
 		'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
