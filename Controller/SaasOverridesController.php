@@ -11,6 +11,7 @@
  */
 
 App::uses('Controller', 'Controller');
+App::uses('Domains', 'MultiTenancy.Lib');
 
 /**
  * Application Controller
@@ -29,5 +30,24 @@ class SaasOverridesController extends Controller {
 		'Form' => array('className' => 'BootstrapExtend.BootstrapExtForm'),
 		'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
 	);
+
+	public $uses = [
+		'MultiTenancy.Tenant'
+	];
+
+	public $organization_id = null;
+
+	public function beforeFilter(){
+
+		$subdomain = Domains::getSubdomain();
+
+		if ($this->Tenant->domainExists($subdomain)){
+			Configure::write('organization_id', $subdomain);
+			$this->organization_id = $subdomain;
+		}
+		$Tenant = null;
+
+		parent::beforeFilter();
+	}
 	
 }
