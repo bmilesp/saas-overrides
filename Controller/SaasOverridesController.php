@@ -28,8 +28,7 @@ class SaasOverridesController extends Controller {
  
 	public $helpers = array(
 		'Form' => array('className' => 'BootstrapExtend.BootstrapExtForm'),
-		'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
-		'Ratchet.Wamp'
+		'Paginator' => array('className' => 'BoostCake.BoostCakePaginator')
 	);
 
 	public $uses = [
