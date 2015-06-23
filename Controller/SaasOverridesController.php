@@ -26,14 +26,41 @@ class SaasOverridesController extends Controller {
 
 	public $layout = 'BootstrapExtend.default';
  
-	public $helpers = array(
-		'Form' => array('className' => 'BootstrapExtend.BootstrapExtForm'),
-		'Paginator' => array('className' => 'BoostCake.BoostCakePaginator')
-	);
+	public $helpers = [
+		'Form' => ['className' => 'BootstrapExtend.BootstrapExtForm'],
+		'Paginator' => ['className' => 'BoostCake.BoostCakePaginator']
+	];
 
 	public $uses = [
 		'MultiTenancy.Tenant'
 	];
+
+	public $components = [
+        'Auth' => [
+            'className' => 'SaasOverrides.RemoteAuth',
+            'authorize' => [
+                'Actions' => [
+                    'actionPath' => 'controllers',
+                    'userModel' => 'Account'
+                ]
+            ],
+            'authenticate' => [
+                'Form' => [
+                    'fields' => ['username' => 'username'],
+                    'userModel' => 'Account'
+                ]
+            ],
+            'flash' => [
+                'element' => 'alert',
+                'key' => 'auth',
+                'params' => [
+                    'plugin' => 'BoostCake',
+                    'class' => 'alert-danger'
+                ]
+            ]
+        ],
+        'Session'
+    ];
 
 	public $organization_id = null;
 
