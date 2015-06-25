@@ -36,6 +36,7 @@ class SaasOverridesController extends Controller {
 	];
 
 	public $components = [
+        'RequestHandler',
         'Auth' => [
             'className' => 'SaasOverrides.RemoteAuth',
             'authorize' => [
